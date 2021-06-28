@@ -10,6 +10,14 @@ exports.allAccess = (req, res) => {
     res.status(200).send("Admin Content.");
   };
   
-  exports.moderatorBoard = (req, res) => {
-    res.status(200).send("Moderator Content.");
+  exports.editorBoard = (req, res) => {
+    res.status(200).send("Editor Content.");
+  };
+
+  exports.reviewerBoard = (req, res) => {
+    res.status(200).send("Reviewer Content.");
+  };
+
+  exports.researcherBoard = (req, res) => {
+    res.status(200).send("Researcher Content.");
   };

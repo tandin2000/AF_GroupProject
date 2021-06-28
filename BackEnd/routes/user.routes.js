@@ -15,9 +15,21 @@ module.exports = function(app) {
     app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
   
     app.get(
-      "/api/test/mod",
-      [authJwt.verifyToken, authJwt.isModerator],
-      controller.moderatorBoard
+      "/api/test/editor",
+      [authJwt.verifyToken, authJwt.isEditor],
+      controller.editorBoard
+    );
+
+    app.get(
+      "/api/test/reviewer",
+      [authJwt.verifyToken, authJwt.isReviewer],
+      controller.reviewerBoard
+    );
+
+    app.get(
+      "/api/test/researcher",
+      [authJwt.verifyToken, authJwt.isResearcher],
+      controller.researcherBoard
     );
   
     app.get(
@@ -25,4 +37,4 @@ module.exports = function(app) {
       [authJwt.verifyToken, authJwt.isAdmin],
       controller.adminBoard
     );
-  };
+  }; 

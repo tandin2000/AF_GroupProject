@@ -85,14 +85,35 @@ const Role = db.role;
         });
   
         new Role({
-          name: "moderator"
+          name: "editor"
         }).save(err => {
           if (err) {
             console.log("error", err);
           }
   
-          console.log("added 'moderator' to roles collection");
+          console.log("added 'editor' to roles collection");
         });
+
+        new Role({
+          name: "reviewer"
+        }).save(err => {
+          if (err) {
+            console.log("error", err);
+          }
+  
+          console.log("added 'reviewer' to roles collection");
+        });
+  
+        new Role({
+          name: "researcher"
+        }).save(err => {
+          if (err) {
+            console.log("error", err);
+          }
+  
+          console.log("added 'researcher' to roles collection");
+        });
+  
   
         new Role({
           name: "admin"
@@ -107,3 +128,4 @@ const Role = db.role;
       }
     });
   }
+ 
