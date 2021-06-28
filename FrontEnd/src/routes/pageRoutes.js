@@ -7,6 +7,7 @@ import NavBar from "../home/navBar";
 import Footer from "../home/footer";
 import Register from "../register/register";
 import WorkShop from "../workShop/workShop";
+
 import CreateWorkShop from "../workShop/createWorkShop";
 import AttendeeWorkshopRegistration from "../attendee/attendeeWorkshopRegistration";
 import AttendeeWorkShopPayment from "../attendee/attendeeWorkShopPayment";
