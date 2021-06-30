@@ -105,6 +105,7 @@ exports.signup = (req, res) => {
           username: user.username,
           email: user.email,
           roles: authorities,
+          number: user.number,
           accessToken: token
         });
       });
