@@ -12,7 +12,15 @@ import AttendeeWorkshopRegistration from "../attendee/attendeeWorkshopRegistrati
 import AttendeeWorkShopPayment from "../attendee/attendeeWorkShopPayment";
 import Researcher from "../researcher/researcher";
 import Reviewer from "../reviewer/reviewer";
+
+
+//   -------- Ruvindu added needed pages :--------------
+
 import Editor from "../editor/editor";
+import CreatEvent from "../editor/addEvent";
+import viewEvents from "../event/viewEvents";
+import viewDetailedEvents from "../event/discriptedEvents";
+
 
 function PageRoutes() {
     return (
@@ -23,13 +31,16 @@ function PageRoutes() {
                     <Switch>
                         <Route path="/reviewer" component={Reviewer}/>
                         <Route path="/researcher" component={Researcher}/>
-                        <Route path="/editor" component={Editor}/>
+                        <Route path="/editor" component={viewEvents}/>
                         <Route path="/workshop-payment" component={AttendeeWorkShopPayment}/>
                         <Route path="/workshop-attendee" component={AttendeeWorkshopRegistration}/>
                         <Route path="/create-workshop" component={CreateWorkShop}/>
                         <Route path="/workshop" component={WorkShop}/>
                         <Route path="/registration" component={Register}/>
                         <Route path="/" component={Home} exact/>
+
+                        <Route path="/:id" component={viewDetailedEvents} />
+
                     </Switch>
                 </section>
                 <Footer/>

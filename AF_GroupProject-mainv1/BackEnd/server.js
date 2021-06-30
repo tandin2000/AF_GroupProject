@@ -9,12 +9,6 @@ const app = express();
 app.use(cors());
 
 
-//Ruvindu added -----------------------RRRRRRRRRRRRRRRRRRRRRRRR
-
-const MainpageAPI = require('./routes/MainPage.routes');
-app.use('/main', MainpageAPI());
-
-//**************************************RRRRRRRRRRRRRRRRRRRRRRR
 
 
 
@@ -54,6 +48,18 @@ app.route('/').get((req, res) => {
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 
+//Ruvindu added -----------------------RRRRRRRRRRRRRRRRRRRRRRRRR
+
+const MainpageAPI = require('./routes/MainPage.routes');
+app.use('/main', MainpageAPI());
+
+const EventAPI = require('./routes/eventR.routes');
+app.use('/item', EventAPI());
+
+const TemplateTesAPI = require('./routes/TemplateTes.routers');
+app.use('/templatetes', TemplateTesAPI());
+
+//**************************************RRRRRRRRRRRRRRRRRRRRRRR
 
 app.listen(PORT, () => {
     console.log('######################################################');
