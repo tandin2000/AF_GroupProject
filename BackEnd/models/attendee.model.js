@@ -29,10 +29,10 @@ const AttendeeSchema = new mongoose.Schema({
         min: 2,
         max: 1050
     },
-    workshops: [{
+    researchpayments: [{
         type: mongoose.Schema.Types.ObjectId,
         required: false,
-        ref: 'workshops'
+        ref: 'researchpayments'
     }],
 });
 
