@@ -19,5 +19,5 @@ exports.allAccess = (req, res) => {
   };
 
   exports.researcherBoard = (req, res) => {
-    res.status(200).send("Researcher Content.");
+    res.status(200).send("ResearcherRegistration Content.");
   };

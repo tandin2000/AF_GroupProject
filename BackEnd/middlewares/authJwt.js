@@ -138,7 +138,7 @@ verifyToken = (req, res, next) => {
             }
           }
   
-          res.status(403).send({ message: "Require Researcher Role!" });
+          res.status(403).send({ message: "Require ResearcherRegistration Role!" });
           return;
         }
       );
