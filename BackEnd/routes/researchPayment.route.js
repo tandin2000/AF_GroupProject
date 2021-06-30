@@ -10,7 +10,7 @@ module.exports = function () {
     //GET ResearchPayment By ID
     router.get('/viewbyid/:id', controller.viewPaymentById);
     //GET Research By ResearchPaymentID
-    router.get('/viewbyid/workshops/:id', controller.viewResearchByPaymentId);
+    router.get('/viewbyid/research/:id', controller.viewResearchByPaymentId);
     //DELETE ResearchPayment By ID
     router.delete('/delete/:id', controller.deleteById);
 

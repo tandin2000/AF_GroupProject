@@ -29,7 +29,7 @@ const viewAllResearch = async (req, res) => {
 const viewById = async (req, res) => {
     if (req.params && req.params.id) {
         await Research.findById(req.params.id)
-            .populate('research', '_id researcherName researcherContactNo researcherEmail description proposalURL')
+            .populate('research', '_id researcherName researcherContactNo researcherEmail researchTitle description researchURL')
             .then(response => {
                 res.status(200).send({ data: response });
             })
@@ -44,20 +44,20 @@ const viewById = async (req, res) => {
 const deleteById = async (req, res) => {
     const id = req.params.id
     await Research.findByIdAndRemove(id).exec()
-    res.send('itemDeleted');
+    res.send('item Deleted');
 }
 
 //Update a Research controller
 
 const updateById = async (req, res) => {
     const id = req.params.id;
-    const {researcherName, researcherContactNo, researcherEmail, description, proposalURL} = req.body;
+    const {researcherName, researcherContactNo, researcherEmail, description, researchURL} = req.body;
     const updateResearch = {
         researcherName,
         researcherContactNo,
         researcherEmail,
         description,
-        proposalURL
+        researchURL
     }
     const update = await Research.findByIdAndUpdate(id, updateResearch)
         .then(() => {

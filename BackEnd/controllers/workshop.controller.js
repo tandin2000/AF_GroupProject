@@ -32,7 +32,7 @@ const viewAllWorkshops = async (req, res) => {
 const viewById = async (req, res) => {
     if (req.params && req.params.id) {
         await WorkShop.findById(req.params.id)
-            .populate('workshops', '_id organizerName organizerContactNo organizerEmail description researchURL')
+            .populate('workshops', '_id organizerName organizerContactNo organizerEmail description proposalURL')
             .then(response => {
                 res.status(200).send({ data: response });
             })
@@ -47,20 +47,20 @@ const viewById = async (req, res) => {
 const deleteById = async (req, res) => {
     const id = req.params.id
     await WorkShop.findByIdAndRemove(id).exec()
-    res.send('itemDeleted');
+    res.send('item Deleted');
 }
 
 //Update a WorkShop controller
 
 const updateById = async (req, res) => {
     const id = req.params.id;
-    const {organizerName, organizerContactNo, organizerEmail, description, researchURL} = req.body;
+    const {organizerName, organizerContactNo, organizerEmail, description, proposalURL} = req.body;
     const updateWorkShop = {
         organizerName,
         organizerContactNo,
         organizerEmail,
         description,
-        researchURL
+        proposalURL
     }
     const update = await WorkShop.findByIdAndUpdate(id, updateWorkShop)
         .then(() => {

@@ -46,9 +46,9 @@ const viewPaymentById = async (req, res) => {
 const viewResearchByPaymentId = async (req, res) => {
     if (req.params && req.params.id) {
         await ResearchPayment.findById(req.params.id)
-            .populate('researchpayments', '_id researcherName description proposalURL')
+            .populate('research', '_id researcherName description researchURL')
             .then(response => {
-                res.status(200).send({ data: response.workshops});
+                res.status(200).send({ data: response.research});
             })
             .catch(error => {
                 res.status(500).send({ error: error.message });
@@ -61,7 +61,7 @@ const viewResearchByPaymentId = async (req, res) => {
 const deleteById = async (req, res) => {
     const id = req.params.id
     await ResearchPayment.findByIdAndRemove(id).exec()
-    res.send('itemDeleted');
+    res.send('item Deleted');
 }
 
 module.exports = {

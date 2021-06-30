@@ -24,7 +24,7 @@ const WorkshopSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    researchURL: {
+    proposalURL: {
         type: String,
         required: true
     },

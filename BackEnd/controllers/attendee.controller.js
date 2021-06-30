@@ -83,7 +83,7 @@ const viewWorkShopByAttendeeId = async (req, res) => {
 const deleteById = async (req, res) => {
     const id = req.params.id
     await Attendee.findByIdAndRemove(id).exec()
-    res.send('itemDeleted');
+    res.send('item Deleted');
 }
 
 /**

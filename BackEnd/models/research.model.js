@@ -1,13 +1,38 @@
 const mongoose = require('mongoose');
 
 const ResearchSchema = new mongoose.Schema ({
-    researcherName: String,
-    researcherContactNo: String,
-    researcherEmail: String,
-    researchTitle: String,
-    description : String,
-    proposalURL: String,
-    paymentAmount: Number
-});
+        researcherName: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        researcherContactNo: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        researcherEmail: {
+            type: String,
+            required: true
+        },
+        researchTitle: {
+            type: String,
+            required: true
+        },
+        description : {
+            type: String,
+            required: true,
+            trim: true
+        },
+        researchURL: {
+            type: String,
+            required: true
+        },
+        paymentAmount: {
+            type: Number,
+            required: false
+        },
+    });
 
-module.exports = mongoose.model('research', ResearchSchema);
+module.exports = mongoose.model('researches', ResearchSchema);
+
